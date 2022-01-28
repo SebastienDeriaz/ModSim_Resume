@@ -3,16 +3,41 @@
 
 \begin{document}
 \section{Stocks \& Flows}
+\begin{itemize}
+\item Capturer les hypothèses sur les causes du
+  comportement dynamique d'un système
+\item Révélez nos "modèles mentaux"
+\item Implanter les éléments de rétroaction dans nos modèles  
+\end{itemize}
+
+
 \subsection{Diagrammes de boucles causales}
 \begin{center}
 \includegraphics[scale=0.4,page=1]{img_0.pdf}\\
 \includegraphics[scale=0.4,page=2]{img_0.pdf}\\
-\includegraphics[scale=0.4,page=3]{img_0.pdf}
+\includegraphics[scale=0.4,page=3]{img_0.pdf}\\
+\includegraphics[width=\columnwidth]{Figures/CLD_2.PNG}
 \end{center}
 Mettre des noms plutôt que des phrases et éviter les négations inutiles
 \subsubsection{Polarité de boucle}
 Multiplication de toutes les polarités.
+\subsubsection{A faire attention}
+\begin{itemize}
+\item Si il y a une ambiguïté sur le signe de la flèche c'est qu'il manque une étape
+\item Des noms plutôt que des phrases (X,Y)
+\item Les noms de variables doivent avoir un sens en
+  cohérence la sensibilité
+\item Choisir les labels dont l'évolution est normalement
+  espérée ou mesurée > 0
+\end{itemize}
 \subsection{Stocks}
+\begin{itemize}
+\item CLD ne représentent pas l'accumulation, les Stocks oui
+\item Stocks = état du système (et nos décisions dépendent de
+  l'état)
+\item E.G.: l'inventaire d'une entreprise, le \# d'employés, le
+  montant sur le compte de paiements  
+\end{itemize}
 État d'un système
 $$\text{stock}(t)=\int_{t_0}^{t}\text{in}(s)-\text{out}(s)ds+\text{stock}(t_0)$$
 \begin{itemize}
@@ -23,7 +48,17 @@ $$\text{stock}(t)=\int_{t_0}^{t}\text{in}(s)-\text{out}(s)ds+\text{stock}(t_0)$$
 \subsection{Flux (Flows)}
 Les flux changent les stocks
 $$\frac{d\text{stock}(t)}{dt}=\text{in}(t)-\text{out}(t)$$
-
+\begin{itemize}
+\item Les flux changent les stocks
+  \item L'inventaire change avec les livraisons
+  \item \# d'employés ch ange avec les recrutements, licenciements et départs à la retraite
+\item Souvent, on a des problèmes à décider comment
+  distinguer flux et taux (l'inflation?)  
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{Figures/StockFlow.PNG}
+\end{figure}
 
 
 

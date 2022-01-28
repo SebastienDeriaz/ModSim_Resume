@@ -60,6 +60,10 @@ INPUT C:\Users\Sebastien\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\verba
 INPUT C:\Users\Sebastien\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\verbatim.sty
 INPUT C:\Users\Sebastien\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
 INPUT C:\Users\Sebastien\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
+INPUT C:\Users\Sebastien\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty
+INPUT C:\Users\Sebastien\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty
+INPUT C:\Users\Sebastien\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty
+INPUT C:\Users\Sebastien\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty
 INPUT introduction.aux
 INPUT introduction.aux
 OUTPUT introduction.aux
