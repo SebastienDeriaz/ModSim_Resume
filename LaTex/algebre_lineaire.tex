@@ -1,0 +1,59 @@
+\documentclass[resume]{subfiles}
+
+
+\begin{document}
+\section{Algèbre linéaire}
+\subsection{Indépendance linéaire}
+$$\alpha_1 v_1+\alpha_2v_2+\cdots+\alpha_mv_m=0\qquad \alpha_i\neq 0$$
+Pour déterminer si les vecteurs sont linéairement indépendants on construit la matrice $A$
+$$A=\begin{bmatrix}
+\\
+v_1 & v_2 & \cdots & v_n\\
+\\
+\end{bmatrix}$$
+$$\det(A)\neq 0\longrightarrow \text{ linéairement indépendants}$$
+$$\text{rang}(A)=N_\text{colonnes}\longrightarrow \text{ linéairement indépendants}$$
+\subsection{Bases}
+Une base $E^n$ est un ensemble de $n$ vecteurs linéairement indépendants. Chaque vecteur est une somme de combinaison linéaire des vecteurs de base
+$$x=\sum_{i=1}^{n} x_iu_i$$
+\subsubsection{Changement de base}
+$$\text{base }U=\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}\qquad \text{base }E=\begin{bmatrix}
+3 & -1\\
+1 & 1
+\end{bmatrix}$$
+$$P=\begin{bmatrix}
+3 & -1\\
+1 & 1
+\end{bmatrix}$$
+
+\begin{align*}
+\text{base }U\longrightarrow &\text{ base }E & x_E&=P^{-1}x_U\\
+\text{base }E\longrightarrow &\text{ base }U & x_U&=Px_E
+\end{align*}
+\subsubsection{Changement de base d'une matrice}
+$$B=P^{-1}AP$$
+\subsection{Valeurs propres}
+les valeurs propres $\lambda$ sont les solutions de l'équation
+$$\det\left(A-\lambda I\right)=\vec{0}$$
+On cherche les solutions de l'équation
+$$\boxed{Ax=\lambda x}\longleftrightarrow \boxed{(A-\lambda I)x=\vec{0}}$$
+La multiplicité numérique d'une valeur propre est son exposant dans le polynôme caractéristique.
+\subsubsection{Vecteurs propres}
+On trouve les vecteurs propres $\vec{x}$ avec
+$$\left(A-\lambda_i I\right)\vec{x}_i=\vec{0}$$
+\paragraph{Python} \verb!valeurs_propres, vecteurs_propres = np.linalg.eig(A)!
+Les vecteurs propres sont linéairement indépendants
+\subsection{Matrice modale}
+C'est la matrice formée par les vecteurs propres d'une matrice
+$$M=\begin{bmatrix}
+\\
+v_1 & v_2 & \cdots & v_n\\
+\\
+\end{bmatrix}$$
+\subsubsection{Diagonalisation de $A$}
+Les vecteurs propres de $A$ constituent une nouvelle base. $\Lambda$ est "l'opération" de $\Lambda$ dans cette nouvelle base
+$$\Lambda=M^{-1}AM$$
+\end{document}
