@@ -1,0 +1,36 @@
+\documentclass[resume]{subfiles}
+
+
+\begin{document}
+\section{Simulation à événements discrets}
+\begin{center}
+\begin{tabular}{ll}
+Temps moyen d'attente dans la file & $E[W_k]$\\
+Temps d'attente maximum dans la file & $W_k$\\
+Temps moyen dans le système $E[S_k]$\\
+Temps maximum passé dans le système & $S_k$\\
+Nombre moyen de clients dans la file $E[X(t)]$\\
+Nombre maximum de clients dans la file $X(t)$\\
+\end{tabular}
+\end{center}
+\subsection{Entités}
+Les entités sont les objets dynamiques de la simulation (clients, pièces, tâches, etc...)
+\subsection{Attributs}
+Les attributs sont les caractéristiques communes des entités (par exemple la quantité que chaque client veut acheter)
+\subsection{Ressources}
+Les ressources représentes les "ingrédients" qu'utilisent les entités pour réaliser leurs tâches
+\subsection{File}
+Place d'attente lorsqu'une entité ne peut pas saisir une ressource
+\subsection{Accumulateurs statistiques}
+Par exemple : nombre total d'entités, temps total d'attente, etc...
+\subsection{Événements}
+Quelque chose (arrivée, départ, etc...) qui arrive à un instant $t$ qui peut changer :
+\begin{itemize}
+\item des attributs
+\item des variables
+\item des accumulateurs statistiques
+\end{itemize}
+
+
+
+\end{document}
