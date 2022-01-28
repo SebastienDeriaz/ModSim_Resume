@@ -1,0 +1,83 @@
+\documentclass[resume]{subfiles}
+
+\begin{document}
+\section{Introduction}
+
+\subsection{Algèbre linéaire}
+
+\subsubsection{Indépendance linéaire}
+
+Les vecteurs sont linéairement indépendants si il n'existe pas de combinaison linéaire nulle.
+
+Ou alors on regroupe ces vecteur dans un matrice est on calcul son déterminant si il est non nulle alors tous les vecteurs sont linéairement indépendants.
+
+\subsubsection{rang}
+Son rang est égal au nombre de colonnes de la matrice qui sont linéairement indépendantes.
+$rank(A) = rank(A^T)$ 
+donc le rang ne peut pas être plus grand que la plus petite des dimension de la matrice NxM.
+
+\subsubsection{Bases}
+
+Une base de $E^n$ est un ensemble de n vecteurs linéairement indépendants.
+La base standard est l'ensemble des vecteurs de base (x,y,z)($e_1,e_2,e_3$)
+
+Tous les vecteurs sont des combinaisons linéaires des vecteurs de base 
+$x=x_1\cdot u_1 + x_2\cdot u_2+...+x_n\cdot u_n$ 
+
+Le changement de base aura pour effet de changer les éléments du vecteur 
+$x = z_1\cdot p_1 + z_2\cdot p-2 +...+ z_n\cdot p_n$ 
+
+\paragraph{Formule changement de base}
+
+
+$x=Pz$ et $z=P^{-1}x$ , la matrice P correspond au regroupement des vecteurs de la nouvelle base
+
+$P = [p_1|p_2] @ p_1=\begin{bmatrix} p_{11}\\ p_{12}\end{bmatrix},p_2=\begin{bmatrix} p_{21}\\ p_{22}\end{bmatrix}$ $P= \begin{bmatrix} 
+p_{11}&p_{21}\\
+p_{12}&p_{22}
+\end{bmatrix}$ 
+
+La matrice $A$ dans la base $u$ est équivalente à la matrice
+$P^{-1}AP$ dans la base $p$  
+
+\subsubsection{Vecteurs propres}
+
+$Ax = \lambda x$ 
+
+les valeurs propres sont calculées à partir de la formule $det(A-I\lambda) = 0$ 
+
+\subsubsection{Matrice modale}
+
+$M =[e_1|e_2|...|e_n]$ 
+
+La transformation de A dans la nouvelle base est $\Lambda=M^{-1}AM$ 
+
+Exemple $M=\begin{bmatrix} 1 & 1 \\ -1 & 2 \end{bmatrix}$ 
+
+\subsection{Equations différentielles}
+
+EDO vs Equation aux différences
+
+$\frac{dy(t)}{dt} = ay(t) \rightarrow y(t+1)=(a+1)y(t)$ 
+
+\subsubsection{Exemple équation aux différences}
+
+$y(k + n) + a_{n-1}y(k + n-1) +...+ a_0y(k) = 0$
+
+$\lambda^{k+n} + a_{n-1}\lambda^{k+n-1} + . . . + a_0\lambda^k = 0$ 
+
+$\lambda^{n} + a_{n-1}\lambda^{n-1} + . . . + a_0\lambda = 0$ 
+
+\subsubsection{Exemple EDO}
+\begin{multline*}
+\frac{dy}{dt} = ay \rightarrow y(t) = Ce^{at}\\
+y(0) = Ce^{a\cdot 0} = Ce^0 = C\\
+y(t) = y(0)e^{at}\\
+\frac{d^2y}{dt^2} + \omega^2y = 0\\
+my'' = -ky\\
+\lambda^2 + \frac{k}{m}=0 \rightarrow \lambda = \pm j\sqrt{\frac{k}{m}}=\pm j\omega\\
+y(t)=C_1 e^{j\omega t}+C_2 e^{-j\omega t} = Asin(\omega t)+Bcos(\omega t)
+\end{multline*}
+
+
+\end{document}
