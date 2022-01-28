@@ -1,0 +1,53 @@
+\documentclass[resume]{subfiles}
+
+\begin{document}
+\section{Concept de contrôle-commande}
+
+\subsection{Exemple du train}
+\begin{itemize}
+\item Système: le train
+\item Variable contrôlée: la vitesse (suivi de trajectoire)
+\item Trajectoire désirée: fixée en temps réel par le conducteur
+\item Perturbations: variations de charges (passagers) et de profil (déclivité de la route, …)
+\item Variable manipulée: couple aux roues  
+\end{itemize}
+
+\subsection{La loi de commande}
+\begin{itemize}
+\item La loi de commande peut être
+  \subitem continue
+  \subitem discrète (on/off)
+  \subitem basée sur les évènements
+\item La loi de commande peut être implantée
+  \subitem manuellement
+  \subitem automatique
+    \subsubitem analogique
+    \subsubitem digitale   
+\end{itemize}
+
+\subsection{Système de contrôle}
+\begin{itemize}
+\item Le contrôleur adapte la variable de commande (manipulée), pour atteindre la valeur désirée pour la variable contrôlée
+\item Il y a deux classes principales de stratégie de contrôle
+  \subitem feedforward (anticipation) ou open-loop (boucle ouverte)
+  \subitem feedback (rétroaction) ou closed-loop (boucle fermée)
+\item Parfois les deux sont implantées simultanément (FB/FF)
+  \subitem FF traite le rejet de perturbation et/ou l’anticipation du chat de consigne
+  \subitem FB cible le suivi de trajectoire
+  \subitem FB/FF très fréquent en chemical engineering  
+\end{itemize}
+
+\subsection{Commande}
+\begin{itemize}
+\item Boucle Ouverte
+
+La loi de commande est déterminée indépendamment de
+la valeur de la variable contrôlée
+
+\item Boucle Fermée
+\end{itemize}
+
+La commande dépend de la valeur de la grandeur
+contrôlée
+
+\end{document}

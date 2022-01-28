@@ -1,0 +1,62 @@
+\documentclass[resume]{subfiles}
+
+\begin{document}
+\section{Système non-linéaire}
+
+Nous ne pouvons pas utilisé les outils d'analyse classique 
+\begin{itemize}
+\item temps discret : $x(t+1)=f(x(t),t)$ 
+\item temps continu : $\dot{x}(t)=f(x(t),t)$ 
+\end{itemize}
+
+Si le système est LTI alors f n'a pas de dépendance en temps
+
+\subsection{Équilibre}
+
+On les obtient en résolvant
+\begin{itemize}
+\item $\bar{x}=f(\bar{x},t)$ (cas discret)
+\item $0=f(\bar{x},t)$ (cas continu)
+\end{itemize}
+
+Mais les choses ne sont pas si simples pour les sys. NL
+\begin{itemize}
+\item Résoudre les équations n'est pas trivial
+\item Les systèmes peuvent avoir 1, aucun, de nombreux points d'équilibre.  
+\end{itemize}
+\subsection{Lyapunov indirect}
+
+La méthode consiste à étudier le système dans le voisinage d'un point équilibre 
+
+Si la zone est suffisamment petite alors le système NL peut être approché par un développement en série de Taylor au 1er ordre (linéaire)
+
+$f(\bar{x}+\delta x(t))= f(\bar{x})+[\frac{\partial f}{\partial x}]_{\bar{x}} \delta x(t)$ 
+
+\subsection{Le Jacobien}
+
+$$
+F_J=\begin{pmatrix}
+\frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \cdots & \frac{\partial f_1}{\partial x_n} \\
+\frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \cdots & \frac{\partial f_2}{\partial x_n} \\
+\vdots & \vdots & \ddots & \vdots\\
+\frac{\partial f_n}{\partial x_1} & \frac{\partial f_n}{\partial x_2} & \cdots & \frac{\partial f_n}{\partial x_n} \\
+\end{pmatrix}
+$$
+
+ Linéarisation avec le Jacobien
+
+\subsubsection{Temps discret}
+
+$\delta \bar{x}(t) = F_J \delta x(t)$ 
+
+\subsubsection{Temps continu}
+
+$\delta\bar{x}(t) = F_J\delta x(t)$ 
+
+\subsection{Lyapunov direct}
+
+S'il existe une fonction de Lyapunov $V(x)$ dans une boule $S(\bar{x},R_0)$ de centre $\bar{x}$, alors le point d'équilibre $\bar{x}$ est stable. Si, de plus, $\dot{V}(x)$ est strictement négatif en tout point (sauf $\bar{x}$), alors la stabilité est asymptotique.  
+
+Pas dans l'examen trop complexe sur papier.
+
+\end{document}
