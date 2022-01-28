@@ -1,0 +1,29 @@
+\documentclass[resume]{subfiles}
+
+
+\begin{document}
+\section{Équations aux différences}
+
+EDO vs Equation aux différences
+
+$\frac{dy(t)}{dt} = ay(t) \rightarrow y(t+1)=(a+1)y(t)$ 
+
+\subsubsection{Exemple équation aux différences}
+
+$y(k + n) + a_{n-1}y(k + n-1) +...+ a_0y(k) = 0$
+
+$\lambda^{k+n} + a_{n-1}\lambda^{k+n-1} + . . . + a_0\lambda^k = 0$ 
+
+$\lambda^{n} + a_{n-1}\lambda^{n-1} + . . . + a_0\lambda = 0$ 
+
+\subsubsection{Exemple EDO}
+\begin{multline*}
+\frac{dy}{dt} = ay \rightarrow y(t) = Ce^{at}\\
+y(0) = Ce^{a\cdot 0} = Ce^0 = C\\
+y(t) = y(0)e^{at}\\
+\frac{d^2y}{dt^2} + \omega^2y = 0\\
+my'' = -ky\\
+\lambda^2 + \frac{k}{m}=0 \rightarrow \lambda = \pm j\sqrt{\frac{k}{m}}=\pm j\omega\\
+y(t)=C_1 e^{j\omega t}+C_2 e^{-j\omega t} = Asin(\omega t)+Bcos(\omega t)
+\end{multline*}
+\end{document}
