@@ -1,0 +1,56 @@
+\documentclass[resume]{subfiles}
+
+
+\begin{document}
+\section{Commande optimale}
+Système dynamique régulier :
+$$\dot{x}(t)=f(x(t),u(t))$$
+Condition initiale fixe
+$$x(0)=x_0$$
+Un ensemble de commandes optimales possibles
+$$u(t)\in U$$
+Et une fonction de coût
+$$J=\psi(x(T))+\int_{0}^{T}l(x(t),u(t))dt$$
+Le but est de trouver un $u(t)$ pour optimiser la fonction de coût. Pour cela on exploite la structure du problème
+\subsection{Approche variationnelle}
+On utilise une fonction de coût indépendante des changement de trajectoire
+$$\bar{J}=J-\int_{0}^{T}\lambda(t)^{T}\left[\dot{x}(t)-f(x(t),u(t))\right]dt$$
+Fonction hamiltonienne
+$$H(\lambda,x,u)=\lambda^{T}f(x,u)+l(x,u)$$
+\subsection{Principe d'optimalité de Pontryagin}
+Si $u(t)$ est maximal alors pour tout $t$
+$$H(\lambda, x, v)\leq H(\lambda,x,u)$$
+Il existe une trajectoire $\lambda(t)$ tels qu'ensemble $u(t)$, $x(t)$ et $\lambda(t)$ vérifient
+$$\dot{x}(t)=f(x(t),u(t))$$
+$$x(0)=x_0$$
+$$-\dot{\lambda}^{T}=\lambda^{T}\nabla_xf(x(t),u(t))+\nabla_xl(x(t),u(t))$$
+Condition de maximalité :
+$$H(\lambda(t),x(t),v(t))\leq H(\lambda(t),x(t),u(t))$$
+\subsection{Systèmes linéaires à coût quadratique}
+Système linéaire :
+$$\dot{x}(t)=A(t)x(t)+B(t)u(t)$$
+On peut mettre la commande sous forme de feedback linéaire. La fonction de coût est quadratique
+$$J=\frac{1}{2}\int_{0}^{T}\left(x(t)^{T}Q(t)x(t)+u(t)^{T}R(t)u(t)\right)dt$$
+$Q$ et $R$ sont symétriques. Voir la procédure à la slide 13. La solution est :
+$$\dot{x}(t)=A(t)x(t)+B(t)R(t)^{-1}B(t)^{T}\lambda(t)\qquad x(0)=x_0$$
+$$\dot{\lambda}(t)=-A(t)^{T}\lambda(t)+Q(t)x(t)\qquad \lambda(T)=0$$
+\subsection{Équation de Riccati}
+$x$ et $\lambda$ dépendent linéairement de $x_0$. $\lambda$ dépend linéairement de $x$. On peut chercher une solution de la forme
+$$\lambda(t)=-P(t)x(t)$$
+\subsubsection{Solution en boucle fermée}
+$$u(t)=R(t)^{-1}B(t)^TP(t)x(t)$$
+$$K(t)=R(t)^{-1}B(t)^{T}P(t)$$
+Dans un cas LTI on a
+$$u(t)=R^{-1}B^{T}Px(t)=Kx(t)$$
+La dynamique du système est contrôlée par :
+$$\dot{x}(t)=(A+BK)x(t)$$
+
+
+
+
+
+
+
+
+
+\end{document}

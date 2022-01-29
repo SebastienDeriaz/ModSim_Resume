@@ -1,0 +1,21 @@
+\documentclass[resume]{subfiles}
+
+
+\begin{document}
+\section{Programmation dynamique}
+Séparation d'un problème en étapes. Par exemple :
+\begin{center}
+Trouver $u(t)$ pour le système dynamique $\dot{x}(t)=f(x(t),u(t))$ qui maximise la fonction de coût $J(u(t))$ sur $t_0...t_f$ et respecte les contraintes
+\end{center}
+\subsection{Principe d'optimalité}
+A partir de tout point d'une trajectoire optimale, la trajectoire restante est optimale pour le problème d'optimisation initialisé en ce point
+\subsubsection{Optimal return function (ORF)}
+$V(x,t)$ est la fonction de retour optimale. Dans un système à temps discret, on travaille à rebours pour trouver $V(x,k)$
+$$V(x,k)=\max_{u\in U}\left[l(xu)+V(f(x,u),k+1)\right]$$
+Dans le cas d'une allocation de ressources, on a 
+$$X(x(N-1),N-1)=\sqrt{x(N-1)}$$
+
+
+
+
+\end{document}
