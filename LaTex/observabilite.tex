@@ -37,7 +37,8 @@ La dynamique de l'erreur est $\dot{\varepsilon}(t) = \dot{z}(t) - \dot{x}(t) = [
 \item Si $z(0)\neq x(0)$ le vecteur d'erreur est gouverné par $[A-EC]$ 
 \item On peut placer les valeurs propres de cette matrice, avec le degré de liberté que constitue E  
 \end{itemize}
-
+$A-EC$ donne la dynamique de l'observateur (qu'on va utiliser pour faire un placement de pôle de l'observateur). Attention ! La fonction place ou acker va déterminer $K$ dans $A-BK$. On doit donc faire
+\verb!acker(A.T, C.T).T! (voir \ref{transpose_matrice})
 \subsubsection{Observateur d'ordre réduit}
 
 Un observateur d’ordre réduit peut être construit, pour que l'effort soit sur les variables "inconnues"
