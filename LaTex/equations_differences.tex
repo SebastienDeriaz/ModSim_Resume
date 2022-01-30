@@ -6,15 +6,37 @@
 
 EDO vs Equation aux différences
 
-$\frac{dy(t)}{dt} = ay(t) \rightarrow y(t+1)=(a+1)y(t)$ 
+$$\frac{dy(t)}{dt} = ay(t) \rightarrow y(t+1)=(a+1)y(t)$$
 
-\subsubsection{Exemple équation aux différences}
 
-$y(k + n) + a_{n-1}y(k + n-1) +...+ a_0y(k) = 0$
+\subsection{Polynôme caractéristique}
+On pose le polynôme en fonction du "décalage" de la valeur
+$$y(k+1)-1.1y(k)=0\longrightarrow \lambda-1.1=0$$
+De manière plus générale
+$$y(k + n) + a_{n-1}y(k + n-1) +...+ a_0y(k) = 0$$
+Va donner
+$$\lambda^{k+n} + a_{n-1}\lambda^{k+n-1} + . . . + a_0\lambda^k = 0$$
+Et si on divise par $\lambda^{k}$
+$$\lambda^{n} + a_{n-1}\lambda^{n-1} + . . . + a_0\lambda = 0$$
 
-$\lambda^{k+n} + a_{n-1}\lambda^{k+n-1} + . . . + a_0\lambda^k = 0$ 
 
-$\lambda^{n} + a_{n-1}\lambda^{n-1} + . . . + a_0\lambda = 0$ 
+
+\subsection{Équations aux différences $\longrightarrow$ Équation différentielle}
+On utilise la formule de la dérivée (pour un $h$ petit)
+
+
+
+
+
+
+\subsection{Solutions générales}
+\begin{align*}
+y(k+1)&= ay(k) & \longrightarrow & y(k)=a^{k}
+\end{align*}
+
+
+
+
 
 \subsubsection{Exemple EDO}
 \begin{multline*}
