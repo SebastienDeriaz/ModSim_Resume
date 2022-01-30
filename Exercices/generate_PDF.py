@@ -44,6 +44,8 @@ for folder in foldersList:
             if(path not in modified_dates or modification != modified_dates[path]):
                 print(f"   converting {path}...")
                 debug = subprocess.run(['jupyter', 'nbconvert', ex, '--to', 'pdf', '--output', ex.replace('ipynb', 'pdf'), f'--LatexPreprocessor.style={preprocessor_style}'], capture_output=True)
+                if(debug.stderr):
+                    print(debug.stderr)
                 modified_dates[path] = modification
         # Convert markdowns to pdf
         for ex in glob.glob('*SDZ.md'):
@@ -52,6 +54,8 @@ for folder in foldersList:
             if(path not in modified_dates or modification != modified_dates[path]):
                 print(f"   converting {path}...")
                 debug = subprocess.run(['pandoc', ex, '--pdf-engine=xelatex', '-o', ex.replace('md', 'pdf')])
+                if(debug.stderr):
+                    print(debug.stderr)
                 modified_dates[path] = modification
 
         os.chdir("..")

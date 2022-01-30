@@ -3,6 +3,20 @@
 
 \begin{document}
 \section{Observabilité}
+
+\subsection{Matrice d'observabilité}
+$$S^T=\begin{bmatrix}
+C & CA & CA^2 & \cdots & CA^{n-1}
+\end{bmatrix}^T=\begin{bmatrix}
+C^T & A^TC^T & (A^2)^TC^T & \cdots & (A^{n-1})^TC^T
+\end{bmatrix}$$
+$$\boxed{\det\left(S^T\right)=\det\left(S\right)\neq 0\longrightarrow\text{ Observable}}$$
+Un système est observable si il est possible de déterminer son état initial en observant sa sortie (en un temps fini depuis le temps initial).\\
+Pour introduire un observateur, il faut que le système soit observable.
+
+
+
+
 \subsection{Définition}
 
 Le système $\dot{x}(t) = Ax (t)$, $y = Cx(t)$   est complètement observable s'il existe un temps fini $t^* > 0$ tel que la  connaissance de $y (t)$  sur $[0\space t^*]$est suffisante pour déterminer la valeur de l'état initial $x(0)$
@@ -26,12 +40,23 @@ L'observateur est $\dot{z}(t)= Az(t)+Bu(t)$
 Mais avec cette observateur l'erreur $\varepsilon(t)=z(t)-x(t)$ donc $\dot{\varepsilon}(t)=A\varepsilon(t)$ l'erreur disparait que lorsque le système est stable.
 
 \subsubsection{Observateur identité}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\columnwidth]{img_23.png}
+\end{figure}
 
-Pour un système \begin{equation}\begin{cases}\dot{x}(t)=Ax(t)+Bu(t)\\y(t)=Cx(t)\end{cases}\end{equation} avec u et y connu
+\paragraph{Système} :
+$$\begin{cases}\dot{x}(t)=Ax(t)+Bu(t)\\y(t)=Cx(t)\end{cases}$$
+\paragraph{Observateur} :
+$$\begin{cases}\dot{z}(t)=Az(t)+E\left[y(t)-Cz(t)\right]+Bu(t)\\
+u(t)=Kz(t)\end{cases}$$
+On choisi $E$ pour déterminer la dynamique de l'observateur et $K$ pour la dynamique du régulateur
+\paragraph{Dynamique de l'erreur} $\dot{\varepsilon}(t) = \dot{z}(t) - \dot{x}(t) = [A - EC] (z(t) - x(t)) = [A - EC] \varepsilon(t)$ 
+\paragraph{Dynamique de l'observateur (boucle fermée)} $A-EC$
+\paragraph{Dynamique du régulateur (boucle fermée)} $A-BK$
 
-L'observateur est $\dot{z}(t)= Az(t)+E[y(t)-Cz(t)]+Bu(t)$ ou E est à choix
 
-La dynamique de l'erreur est $\dot{\varepsilon}(t) = \dot{z}(t) - \dot{x}(t) = [A - EC] (z(t) - x(t)) = [A - EC] \varepsilon(t)$ 
+
 \begin{itemize}
 \item Si $z(0)=x(0)$ alors $z(t)=x(t)$ pour tout $t>0$ 
 \item Si $z(0)\neq x(0)$ le vecteur d'erreur est gouverné par $[A-EC]$ 
@@ -52,11 +77,6 @@ Voir les pages 14-16 du polycopier 2\_11 Observability
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\columnwidth]{Figures/CtrlStab_1.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\columnwidth]{Figures/CtrlStab_2.png}
 \end{figure}
 
 \subsubsection{Théorème}

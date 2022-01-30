@@ -4,6 +4,17 @@
 \section{Contrôlabilité}
 
 Si l'ensemble des états que l'on peut atteindre en partant de zéro est l'espace d'états entier, alors le système est dit complètement contrôlable. (On peut aller partout)
+\subsection{Matrice de contrôlabilité}
+$$P_c=\begin{bmatrix}
+\\
+B & AB & A^2B & \cdots & A^{n-1}B\\
+\\
+\end{bmatrix}$$
+$$\boxed{\det(P_c)\neq 0\longrightarrow\text{ Contrôlable}}$$
+
+
+
+
 
 \subsection{Définition}
 
@@ -79,6 +90,15 @@ On obtient $\bar{A}= M^{-1}AM$ qui est la forme canonique compagnon de contrôla
 \item La boucle fermée est plus facile à réaliser
 \item La boucle fermée requiert du temps de calcul  
 \end{itemize}
+
+\subsection{Retour d'état}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\columnwidth]{Figures/CtrlStab_2.png}
+\end{figure}
+$$u(t)=Kz(t)$$
+La dynamique de la boucle ouverte est $A-BK$ (ou $A+BK$, c'est égal car on va déterminer les valeurs de $K$).
 
 \subsubsection{Théorème}
 

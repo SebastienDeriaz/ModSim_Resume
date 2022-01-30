@@ -15,6 +15,8 @@
 \setlist[enumerate]{nosep,itemsep=0pt, leftmargin=0.5cm}
 \usepackage{float}
 \usepackage{amssymb}
+\usepackage{mdframed}
+\usepackage{siunitx}
 
 \begin{document}
 \begin{multicols}{3}
@@ -46,5 +48,13 @@
 
 
 \subfile{outils}
+\section{A faire attention}
+\begin{mdframed}[linewidth=1pt,linecolor=OrangeRed]
+\begin{itemize}
+\item Conversion d'unités (\si{\liter\per\hour}$\longrightarrow$\si{\cubic\meter\per\second})
+\end{itemize}
+\end{mdframed}
+
+
 \end{multicols}
 \end{document}
