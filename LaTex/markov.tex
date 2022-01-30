@@ -26,15 +26,18 @@ La somme de chaque colonne / ligne est $1$
 $\pi(0)$ est le vecteur de probabilité à l'itération 0 ($1$ à la ligne qui correspond à l'état initial). On calcule la probabilité de chaque état de manière itérative
 $$\pi(1)=P^{T}\pi(0)$$
 $$\pi(k+1)=P^{T}\pi(k)$$
-$$\pi(k)=P^{T^{k}}\pi(0)$$
+$$\pi(k)=(P^{T})^{k}\pi(0)$$
 \subsection{État récurrent}
 Si une chaine revient sur un état précédent, c'est un état récurrent
 \subsection{État stable}
 l'état de stabilité $\pi$ est tel que
 $$\pi = P^T\pi$$
 $$\lim_{m\to\infty}P^m=\bar{P}$$
-
-
+\subsubsection{Calcul de la stabilité}
+merci wikipedia \url{https://en.wikipedia.org/wiki/Markov_chain}\\
+Pour déterminer l'état de stabilité du système, on construit la matrice $Q$
+$$Q=f(0_{n\times n})\cdot \left[f(P-I)\right]^{-1}$$
+Avec $f(X)$ une fonction qui retourne $X$ avec sa colonne de droite remplie de $1$. L'état de stabilité sera donné par la première ligne de $Q$
 
 
 \end{document}

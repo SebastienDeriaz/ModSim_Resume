@@ -32,19 +32,34 @@ Le temps de division par 2 du stock est de $t_d=ln(2)\tau=0.70\tau$
     \includegraphics[width=1\columnwidth]{Figures/FDM_3.png}
 \end{figure}
 
-L'équation du système est $\frac{dP}{dt}=b(\frac{P}{C})P-d(\frac{P}{C})P$  
+L'équation du système est
+$$\frac{dP}{dt}=b(\frac{P}{C})P-d(\frac{P}{C})P$$
 
-La croissance nette est une fonction de la population P : $\frac{dP}{dt}=g(P,C)P=g(1-\frac{P}{C})P$ 
+La croissance nette est une fonction de la population P :
+$$\frac{dP}{dt}=g(P,C)P=g(1-\frac{P}{C})P$$
 
-Modèle logistique : $g(1-\frac{P}{C})$ 
 
-Equation logistique : $P(t)= \frac{C}{1+[\frac{C}{P(0)}-1]e^{-gt}}$ 
+\subsection{Modèle logistique}
+\begin{itemize}
+\item $P$ : Population
+\item $C$ : Capacité (carrying capacity)
+\item $P_0$ : Population initiale
+\item $g$ : gain
+\end{itemize}
+$$\frac{dP}{dt}=g(1-\frac{P}{C})$$
+Solution de l'équation 
+$$P(t)= \frac{C}{1+[\frac{C}{P_0}-1]e^{-gt}}$$
 
 \subsection{Modèle SI et SIR}
 \begin{itemize}
-\item S : susceptibles
-\item I : infectés
-\item R : rétablit
+\item $S$ : susceptibles
+\item $I$ : infectés
+\item $R$ : rétablit
+\item $I_R$ : Infection Rate
+\item $R_R$ : recovery rate
+\item $c$ : taux de contact
+\item $i$ : taux d'infectiosité
+\item $d$ : durée moyenne de maladie
 \end{itemize}
 
 \begin{figure}[H]
@@ -53,8 +68,8 @@ Equation logistique : $P(t)= \frac{C}{1+[\frac{C}{P(0)}-1]e^{-gt}}$
 \end{figure}
 
 \subsubsection{Equation du modèle SI}
-
-$N=S+I \rightarrow \frac{dS}{dt}=-(ciS)\frac{I}{N}= -(I_R)$ IR = Infection Rate $\frac{dI}{dt}=ci\cdot I(1-\frac{I}{N})$ 
+$$N=S+I \rightarrow \frac{dS}{dt}=-(ciS)\frac{I}{N}= -(I_R)$$
+$$\frac{dI}{dt}=ci\cdot I(1-\frac{I}{N})$$
 
 \begin{figure}[H]
     \centering
@@ -64,19 +79,25 @@ $N=S+I \rightarrow \frac{dS}{dt}=-(ciS)\frac{I}{N}= -(I_R)$ IR = Infection Rate 
 \subsubsection{Equation du modèle SIR}
 
 \begin{align*}
-\frac{dS}{dt}&=-(ciS)\frac{I}{N}\\
-R_R&=\frac{I}{d}\\
-\frac{dI}{dt} &= (ciS)\frac{I}{N}-\frac{I}{d}\\
-\frac{dR}{dt} &= \frac{I}{d}\\
+\frac{dS}{dt}&=-(c\cdot i\cdot S)\frac{I}{N}\\
+\frac{dR}{dt}&=R_R =\frac{I}{d}\\
+\frac{dI}{dt} &= I_R=(c\cdot i\cdot S)\frac{I}{N}-\frac{I}{d}\\
 N&=S+I+R
 \end{align*}
 
 
-Point de bascule $I_R > R_R \rightarrow ciS(\frac{I}{N}) > \frac{I}{d}$ ou $cid(\frac{S}{N} > 1)$ 
+Point de bascule
+$$I_R > R_R \rightarrow c\cdot i\cdot S(\frac{I}{N}) > \frac{I}{d}$$
+ou
+$$c\cdot i\cdot d(\frac{S}{N} > 1)$$
 
 \subsection{Retard}
 
 Un retard est un processus dont la sortie correspond à l’entrée translatée dans le temps
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=6.00cm]{img_24.png}
+\end{figure}
 
 \end{document}
