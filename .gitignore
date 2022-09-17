@@ -4,3 +4,4 @@
 *.aux
 LaTex/introduction.fdb_latexmk
 LaTex/introduction.fls
+*.json
